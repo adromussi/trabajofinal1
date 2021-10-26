@@ -17,7 +17,7 @@ const pedido3 = new pedidoSushi({ nombre: "pedro", pedido: "deluxe", agregados: 
 const pedido4 = new pedidoSushi({ nombre: "ana", pedido_: "deluxe", agregados: "si", cantidad: "2" });
 const pedido5 = new pedidoSushi({ nombre: "pedro", pedido: "todo salmon", agregados: "no", cantidad: "3" });
 
-/*-----------------Definimos Array--------------*/
+
 const pedidosNuevos = [];
 
 pedidosNuevos.push(pedido1, pedido2, pedido3, pedido4, pedido5);
