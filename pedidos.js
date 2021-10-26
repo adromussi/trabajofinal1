@@ -1,20 +1,19 @@
 //Incorporar arrays
 
 class pedidoSushi {
-    constructor(nombre, pedido, agregados, cantidad, envio, domicilio) {
+    constructor({nombre, pedido, agregados, cantidad}) {
       this.nombre = nombre;
       this.pedido = pedido;
       this.agregados = agregados;
       this.cantidad = cantidad;
-      this.envio = envio;
-      this.domicilio = domicilio;
+      
       
   }
 }
 const pedido1 = new pedidoSushi({ nombre: "ana", pedido: "todo salmon", agregados:"si", cantidad: "3" });
 const pedido2 = new pedidoSushi({ nombre: "juan", pedido:"gold", agregados: "no", cantidad:"2" });
 const pedido3 = new pedidoSushi({ nombre: "pedro", pedido: "deluxe", agregados: "si", cantidad:"3"});
-const pedido4 = new pedidoSushi({ nombre: "ana", pedido_: "deluxe", agregados: "si", cantidad: "2" });
+const pedido4 = new pedidoSushi({ nombre: "ana", pedido: "deluxe", agregados: "si", cantidad: "2" });
 const pedido5 = new pedidoSushi({ nombre: "pedro", pedido: "todo salmon", agregados: "no", cantidad: "3" });
 
 
@@ -33,7 +32,7 @@ const pedidosFilter = pedidosNuevos
 
 console.log(pedidosFilter);
 
-pedidoSushi.map((p) => p.envio(si));
+pedidoSushi.map((p) => p.agregados(no));
 
 
 
