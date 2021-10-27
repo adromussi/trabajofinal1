@@ -14,7 +14,7 @@ const pedido1 = new pedidoSushi({ nombre: "ana", pedido: "todo salmon", agregado
 const pedido2 = new pedidoSushi({ nombre: "juan", pedido:"gold", agregados: "no", cantidad:"2" });
 const pedido3 = new pedidoSushi({ nombre: "pedro", pedido: "deluxe", agregados: "si", cantidad:"3"});
 const pedido4 = new pedidoSushi({ nombre: "ana", pedido: "deluxe", agregados: "si", cantidad: "2" });
-const pedido5 = new pedidoSushi({ nombre: "pedro", pedido: "todo salmon", agregados: "no", cantidad: "3" });
+const pedido5 = new pedidoSushi({ nombre: "pedro", pedido: "todo salmon", agregados: "no", cantidad: "1" });
 
 
 const pedidosNuevos = [];
@@ -32,97 +32,44 @@ const pedidosFilter = pedidosNuevos
 
 console.log(pedidosFilter);
 
-pedidoSushi.map((p) => p.agregados(no));
-
-
-
-
-
-
-
-
-
-
-//-----------------Iterador---------------------
-/*
-
- recibeAtaque(valor) {
-    this.puntosDeVida = this.puntosDeVida - valor;
-    console.log(`${this.nombre} recibio un ataque de ${valor}`);
-
-    if (this.puntosDeVida <= 0) {
-      console.log(`${this.nombre} ha muerto`);
-    } else {
-      this.imprimeVida();
-    }
+let deluxeCant = 0;
+let tsalmonCant = 0;
+const arrayOnlyName = [];
+for( const pedidoSushi of pedidosNuevos){
+   if(pedidoSushi.pedido === `deluxe`){
+     deluxeCant++;
+   }
+   if(pedidoSushi.pedido === `todo salmon`){
+    tsalmonCant++;
   }
-  recibeCuracion(valor) {
-    this.puntosDeVida = this.puntosDeVida + valor;
-    console.log(`${this.nombre} recibio una curación de ${valor}`);
-    this.imprimeVida();
-  }
-  imprimeVida() {
-    console.log(`Ahora le quedan ${this.puntosDeVida} puntos de vida`);
-  }
+  arrayOnlyName.push ( pedidoSushi.nombre)
+}
+console.log (`la cantidad de combos deluxe son: ${deluxeCant}`);
+console.log (`la cantidad de combos todo salmon son: ${tsalmonCant}`);
+console.log (arrayOnlyName.join(`**`));
+
+
+/*for (nombre, pedido, agregados, cantidad) {
+  let nombre   = prompt("Nombre del producto N° " + i)
+  let pedido = parseInt(prompt("Cantidad del producto N° "+ i))
+  let agregados   = parseInt(prompt("Precio del producto N° " + i))
+  let cantidad   = parseInt(prompt("Precio del producto N° " + i))
 }
 
-const goblin1 = new Personaje({ clase: "Goblin", nombre: "Goblino" });
-const humano1 = new Personaje({ clase: "Humano", nombre: "Golum" });
-const elfo1 = new Personaje({ clase: "Elfo", nombre: "Legolas" });
-const hobbit1 = new Personaje({ clase: "Hobbit", nombre: "Frodo" });
-const hobbit2 = new Personaje({ clase: "Hobbit", nombre: "Sam" });
+//pedidoSushi.map((p) => p.agregados(no));
 
-//console.log(goblin1);
 
-const personajes = [];
-
-personajes.push(goblin1, humano1, elfo1, hobbit1, hobbit2);
-
-console.log(personajes);
-
-const encontrado = personajes.find((p) => p.clase === "Hobbit");
-console.log(encontrado);
-
-const personajesFiltrados = personajes
-  .filter((p) => p.clase === "Hobbit")
-  .filter((p) => p.nombre === "Sam");
-
-console.log(personajesFiltrados);
-
-personajes.map((p) => p.recibeAtaque(100));
-
-console.log(personajes);
-   for (let i = 1; i <= cantidad; i++) {
-    let nombre   = prompt("Nombre del producto N° " + i)
-    let pedido = parseInt(prompt("Cantidad del producto N° "+ i))
-    let agregados   = parseInt(prompt("Precio del producto N° " + i))
-    let cantidad   = parseInt(prompt("Precio del producto N° " + i))
-    let envio   = parseInt(prompt("Precio del producto N° " + i))
-    let domicilio   = parseInt(prompt("Precio del producto N° " + i))}
+/*for (let i = 1; i <= cantidad; i++) {
     
-    //Metodo push
-    respuesta.push(new pedidoSushi((nombre, pedido, agregados, cantidad, envio, domicilio)),
-
-
-
-//Metodo find
-    const busqueda = respuesta.find(e => e.nombre === "Zapallo")
-    console.log(busqueda)
-
-//Mostrar Array
-console.log(respuesta),
-
-//-----------------Ordenar un array de objetos-------------------
-
-
-
-console.log(respuesta),
-
-
-
------Precio---------
-respuesta.sort(function(a,b){
-    return a.precio < b.precio;
-}),
-
-console.log(respuesta)*/
+    let nombre   = prompt("Nombre del producto N° " + i)
+    let cantidad = parseInt(prompt("Cantidad del producto N° "+ i))
+    let precio   = parseInt(prompt("Precio del producto N° " + i))
+envio(si)
+  this.conEnvio = this.conEnvio + si ;
+   console.log (`${this.nombre} vas a querer que te enviemos el pedido?`);
+   if (this.conEnvio === envio) {
+    console.log (`${this.nombre} indicanos porfavor tu domicilio`);
+   }
+   else {
+    console.log (`${this.nombre} en 30 min podes retirarlo por el local`);
+   }*/
