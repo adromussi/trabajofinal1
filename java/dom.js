@@ -1,4 +1,5 @@
-/*function newPedido(nombre, apellido, domicilio, telefono, envio){
+/* FORMULARIOOOOO
+function newPedido(nombre, apellido, domicilio, telefono, envio){
     this.nombre =nombre;
     this.apellido = apellido;
     this.domicilio = domicilio;
@@ -106,29 +107,11 @@ let productos = [
     },
   ];
   
-  // const cargarProductos = () => {
-  //   let contenedor = document.getElementById("container");
-  //   contenedor.innerHTML = "";
-  //   let listaProductos = "";
-  //   productos.forEach((producto) => {
-  //     listaProductos =
-  //       listaProductos +
-  //       `<div class="card" style="width: 18rem;">
-  //         <img src="${producto.imagen}" class="card-img-top" alt="...">
-  //         <div class="card-body">
-  //           <h5 class="card-title">${producto.nombre}</h5>
-  //           <p class="card-text">${producto.precio}</p>
-  //           <a href="#" class="btn btn-primary" onClick= "abrirCarrito()">COMPRAR</a>
-  //         </div>
-  //       </div>`;
-  //   });
+ 
   
-  //   contenedor.innerHTML = listaProductos;
-  // };
   
-  //El mismo resultado hecho un poco mas complejo
   
-  const cargarProductos = () => {
+  /*const cargarProductos = () => {
     let contenedor = document.getElementById("container");
     contenedor.innerHTML = "";
   
@@ -149,5 +132,30 @@ let productos = [
   };
   const abrirCarrito = () => {
     alert("carrito abierto");
-  };
+  };*/
   
+const cargarRetiro = () => {
+let contenedor = document.getElementById("container");
+contenedor.innerHTML = "";
+let datosClientes = "";
+productos.forEach((cliente) => {
+datosClientes =
+datosClientes +
+`<form id="formulario"> 
+  
+  <input class="fielder" type="text" name="NOMBRE" id="nombre" placeholder="NOMBRE"></input>
+  
+  <input class="fielder" type="text" name="APELLIDO" id="apellido" placeholder="APELLIDO"></input>
+  
+  <input class="fielder" type="text" name="DOMICILIO" id="domicilio" placeholder="DOMICILIO"></input>
+  
+  <input class="fielder" type="number" name="TELEFONO" id="telefono"placeholder="TELEFONO"></input>
+  
+  <div id="container" class="row">  
+    <button class="btn btn-primary cargar" onClick="cargarProductos()">ARMEMOS TU PEDIDO!!</button>
+  </div>  
+</form>` 
+ });
+    
+contenedor.innerHTML (datosClientes);
+}; 
