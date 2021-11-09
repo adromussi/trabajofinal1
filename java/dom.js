@@ -29,8 +29,6 @@ const cargarDeli = () => {
          };    
         
     
-
-
 let productos = [
     {
       id: 1,
@@ -98,7 +96,7 @@ let productos = [
       <div class="card-body">
         <h5 class="card-title">${producto.nombre}</h5>
         <p class="card-text">${producto.precio}</p>
-        <a href="#" class="btn btn-primary" onClick="abrirCarrito()">Comprar</a>
+        <a href="#" class="btn btn-primary" onClick="abrirCarrito()">LO QUIERO!!</a>
       </div>
         `;
       card.innerHTML = html;
