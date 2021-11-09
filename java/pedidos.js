@@ -73,3 +73,65 @@ envio(si)
    else {
     console.log (`${this.nombre} en 30 min podes retirarlo por el local`);
    }*/
+   function clientes(nombre, apellido, domicilio, telefono){
+    this.nombre =nombre;
+    this.apellido = apellido;
+    this.domicilio = domicilio;
+    this.telefono = telefono;
+}
+
+/*function clientes(){
+    let nombre = document.getElementById("nombre").value;
+    let apellido = document.getElementById("apellido").value;
+    let domicilio = document.getElementById("domicilio").value;
+    let telefono = document.getElementById("telefono").value;
+    let pedido1 = new newPedido(nombre, apellido, domicilio, telefono)
+    console.log(pedido1);
+    datosCliente(pedido1); 
+     
+}
+//eliminar contenido
+function datosCliente(pedido1){
+    let formulario1= document.getElementById("formulario");
+    formulario1.parentNode.removeChild(formulario1);
+}
+//agregar contenido
+let nuevoCliente = document.createElement("div");
+nuevoCliente.innerHTML =
+"HOLA" + pedido0.nombre + pedido0.apellido + "!!!" +
+ "YA TENEMOS TUS DATOS , EMPECEMOS A ARMAR TU PEDIDO" +
+ "CUANDO ESTE LISTO LO ENVIAREMOS A" + pedido0.domicilio + 
+ "CUALQUIER DUDA NOS COMUNICAREMOS A ESTE NUMERO " + pedido0.telefono
+nuevoCliente.className = "datos-clientes"
+document.body.appendChild(nuevoCliente);*/
+/*let productos = [
+    {id: `ts`, nombre:`combo todo salmon`,piezas:`15 piezas`,precio:`$1500`},
+    {id: `gl`, nombre:`combo gold`,piezas:`15 piezas`,precio:`$1500`},
+    {id: `dl`, nombre:`combo deluxe`,piezas:`45 piezas`,precio:`$1500`},
+    {id: `sm`, nombre:`combo smile`,piezas:`30 piezas`,precio:`$1500`},
+    {id: `fs`, nombre:`combo fusion`,piezas:`15 piezas`,precio:`$1500`},
+    {id: `vg`, nombre:`combo veggie`,piezas:`12 piezas`,precio:`$1500`},
+]
+console.log (productos);
+productos.forEach((producto) =>{
+let newProducto = document.createElement(`div`)
+newProducto.innerHTML = `
+<button>
+<h2>${producto.nombre}</h2>
+<p>${producto.piezas}</p>
+<p>${producto.precio}</p>
+
+</button>
+`
+
+document.body.appendChild(newProducto)
+})
+let clientes =[
+    {
+        nombre: "text",
+        apellido:"text",
+        domicilio: "text",
+        telefono:"number",
+
+        }
+] ;*/
