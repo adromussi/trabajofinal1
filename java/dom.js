@@ -102,12 +102,13 @@ const nuevosProductos = [
 
 for (const producto of nuevosProductos) {
     $("#container").append(
-    "card", "col-sm-12", "col-lg-3"
-    `  <img src="${producto.imagen}" class="card-img-top" alt="...">
+      `<div class="card col-sm-12 col-lg-3">
+      <img src="${producto.imagen}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">${producto.nombre}</h5>
         <p class="card-text">${producto.precio}</p>
         <a href="#" id='btn${producto.id}' class="btnn btn-primary">LO QUIERO!!</a>
+      </div>
       </div>`
     )
 }
