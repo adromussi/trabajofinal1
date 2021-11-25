@@ -45,17 +45,26 @@ const confirmarDatos = () => {
   console.log({ nombre, domicilio, telefono });
 
   let nuevoCliente = document.createElement("div");
-  nuevoCliente.innerHTML = `<p> HOLA  ${nombre}, AHORA VAMOS A ARMAR TU PEDIDO!!
+  nuevoCliente.innerHTML = `<p id="confirmacion"> HOLA  ${nombre}, AHORA VAMOS A ARMAR TU PEDIDO!!
     TE LO ENVIAREMOS A ${domicilio} Y CUALQUIER DUDA NOS COMUNICAREMOS CON VOS AL ${telefono}
     SI TODOS LOS DATOS QUE INGRESASTE SON CORRECTOS SIGAMOS, ASI TE LLEVAMOS LO MAS RAPIDO POSIBLE EL PEDIDO</p> 
     <div id="container" class="row">  
-        <button class="btn btn-primary cargar" onClick="nuevoPedido()">ARMEMOS TU PEDIDO!!</button>
+        <button class="btn btn-primary cargar" onClick="carta()">ARMEMOS TU PEDIDO!!</button>
     </div>  `;
   nuevoCliente.className = "datos-Clientes";
   nuevoCliente.id="confirmacionId"
   document.body.appendChild(nuevoCliente);
+  // var highlightBg = highlightColor || "#FFFF9C";
 
-  return;
+  $("#confirmacion").css("color", "black")
+        .slideUp(1000)
+        .animate({  left:'250px',
+          opacity:'0.5',
+          "font-size":'20px'
+           },
+          1000)
+        .slideDown(1000);
+
 };
 
 function datosCliente(pedido1) {
