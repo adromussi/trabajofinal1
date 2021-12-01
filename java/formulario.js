@@ -49,7 +49,7 @@ const confirmarDatos = () => {
     TE LO ENVIAREMOS A ${domicilio} Y CUALQUIER DUDA NOS COMUNICAREMOS CON VOS AL ${telefono}
     SI TODOS LOS DATOS QUE INGRESASTE SON CORRECTOS SIGAMOS, ASI TE LLEVAMOS LO MAS RAPIDO POSIBLE EL PEDIDO</p> 
     <div id="container" class="row">  
-        <button class="btn btn-primary cargar" onClick="carta()">ARMEMOS TU PEDIDO!!</button>
+        <button class="btn btn-primary cargar" onClick="nuevoPedido()">ARMEMOS TU PEDIDO!!</button>
     </div>  `;
   nuevoCliente.className = "datos-Clientes";
   nuevoCliente.id="confirmacionId"
