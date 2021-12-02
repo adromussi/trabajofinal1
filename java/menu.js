@@ -108,7 +108,7 @@ const productos = [
   const nuevoPedido = () => {
     let contenedor = document.getElementById("container");
     document.getElementById("confirmacionId").style.display = "none";
-  console.log("nuevoPedido");}
+    console.log("nuevoPedido");
 
   productos.forEach ((producto, index) => {
           let card = document.createElement("div");
@@ -118,49 +118,43 @@ const productos = [
       <div class="card-body">
         <h5 class="card-title">${producto.nombre}</h5>
         <p class="card-text">${producto.precio}</p>
-        <a href="#" class="btnn btn-primary" onClick="(${index})">LO QUIERO!!</a>
-      </div>
-    </div>`;
+        <a href="#" class="btnn btn-primary" onClick="inicioCompra(${index})">LO QUIERO!!</a>
+      </div>`;
           card.innerHTML = html;
           contenedor.appendChild(card);
-
-          /* (`#btn${producto.id}`).on("click", function () {
-             console.log(`YA CARGAMOS ${producto.nombre}`);
-           });*/
-      });
-
-    //card.innerHTML = html;
-    //contenedor.appendChild(card);
-  
-  const cart = [];
+          
+      })
+    }
+   
+  const compra = [];
   
   const inicioCompra = (indexProducto) => {
     //findIndex devuelve el indice del elemento encontrado
     // si no encuentra nada devuelve menos 1 (-1)
-    const indiceEncontradoCarrito = cart.findIndex((elemento) => {
+    const indexVerificado = compra.findIndex((elemento) => {
       return elemento.id === productos[indexProducto].id;
     });
-    if (indiceEncontradoCarrito === -1) {
+    if (indexVerificado === -1) {
       //agrego el producto
-      const productoAgregar = productos[indexProducto];
-      productoAgregar.cantidad = 1;
-      cart.push(productoAgregar);
-      actualizarCarrito();
+      const agregarCompra = productos[indexProducto];
+      agregarCompra.cantidad = 1;
+      compra.push(agregarCompra);
+      renovarCompra();
     } else {
       //incremento cantidad
-      cart[indiceEncontradoCarrito].cantidad += 1;
-      actualizarCarrito();
+      compra [indexVerificado].cantidad += 1;
+      renovarCompra();
     }
   };
   
-  let modalCarrito = document.getElementById("cart");
+  let modoCompra = document.getElementById("carro");
   
-  const actualizarCarrito = () => {
+  const renovarCompra = () => {
     let total = 0;
-    modalCarrito.className = "cart";
-    modalCarrito.innerHTML = "";
-    if (cart.length > 0) {
-      cart.forEach((producto, indice) => {
+    modoCompra.className = "carro";
+    modoCompra.innerHTML = "";
+    if (compra.length > 0) {
+      compra.forEach((producto, indice) => {
         total = total + producto.precio * producto.cantidad;
         const carritoContainer = document.createElement("div");
         carritoContainer.className = "producto-carrito";
@@ -176,16 +170,16 @@ const productos = [
           }</div>
           <button class="btn btn-danger"  id="remove-product" onClick="removeProduct(${indice})">Eliminar producto</button>
            `;
-        modalCarrito.appendChild(carritoContainer);
+        modoCompra.appendChild(carritoContainer);
       });
       // Dibujo el total y lo appendeo en el div capturado y guardado en la variable modalCarrito
       const totalContainer = document.createElement("div");
       totalContainer.className = "total-carrito";
       totalContainer.innerHTML = `<div class= "total"> TOTAL $ ${total}</div>
       <button class= "btn btn-danger finalizar" id="finalizar" onClick="finalizarCompra()"> FINALIZAR COMPRA </button>`;
-      modalCarrito.appendChild(totalContainer);
+      modoCompra.appendChild(totalContainer);
     } else {
-      modalCarrito.classList.remove("cart");
+      modoCompra.classList.remove("cart");
     }
   };
   
@@ -195,21 +189,22 @@ const productos = [
   };
   const finalizarCompra = () => {
     const total = document.getElementsByClassName("total")[0].innerHTML;
-    modalCarrito.innerHTML = "";
+    modoCompra.innerHTML = "";
     const compraFinalizada = `<div class="compra-finalizada"><p class="compra-parrafo"> YA CASI ES TUYA LA COMPRA, EL   ${total} </p></div>
     <div class="datos-cliente">
     <p class="datos-parrafo"> Complete el formulario con sus datos para coordinar la entrega</p>
     <button class= "btn btn-danger formulario" id="formulario" onClick="mostarMensaje()"> FORMULARIO </button>
     </div>`;
-    modalCarrito.innerHTML = compraFinalizada;
+    modoCompra.innerHTML = compraFinalizada;
   };
   
   const mostrarMensaje = () => {
     const nombreCliente = document.getElementById("nombre").value;
     const domicilioCliente = document.getElementById("domicilio").value;
     debugger;
-    modalCarrito.innerHTML = "";
+    modoCompra.innerHTML = "";
     let mensaje = `<div class="mensaje-final">Gracias ${nombreCliente} por su compra! en 72 horas recibira su paquete en ${domicilioCliente} </div>`;
-    modalCarrito.innerHTML = mensaje;
+    modoCompra
+    .innerHTML = mensaje
   };
   
